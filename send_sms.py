@@ -9,11 +9,17 @@ msg_service_sid = "MGd16e77736a10b4a36af553508ed1ba70"  # starts with "MG"
 
 client = Client(account_sid, auth_token)
 
+# message = client.messages.create(
+#     messaging_service_sid=msg_service_sid,
+#     to="+818040832003",  # destination in E.164
+#     body="Hello from Twilio via Messaging Service 🚀"
+# )
 message = client.messages.create(
     messaging_service_sid=msg_service_sid,
-    to="+818040832003",  # destination in E.164
-    body="Hello from Twilio via Messaging Service 🚀"
+    from_="+817090623322",      # your Twilio number, SMS-capable, in E.164
+    to="+818040832003",
+    body="Hello from my Twilio number 🚀"
 )
 
-print("SID:", message.sid)
+
 
